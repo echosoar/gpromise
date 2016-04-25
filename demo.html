@@ -1,0 +1,20 @@
+<script src="gpromise.js"></script>
+<script>
+Promise(function(resolve,reject){
+	setTimeout(function(){
+		resolve("GPromise","Author:echosoar");
+	},1000);
+}).then(function(name,author){
+	console.log(name);
+	console.log(author);
+	return "Blog:http://iwenku.net";
+}).then(function(website){
+	console.log(website);
+	return "Github:https://github.com/echosoar";
+}).then(function(github){
+	setTimeout(function(){
+		console.log(github);
+	},1000)
+});
+
+</script>
