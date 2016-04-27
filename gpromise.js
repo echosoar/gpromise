@@ -77,6 +77,15 @@
 		});
 	}
 	
+	Promise.prototype.delay=function(time){
+		var _promise=this;
+		return Promise(function(resolve,reject){
+			setTimeout(function(){
+				resolve.apply(null,_promise._value);
+			},time);
+		});
+	}
+	
 	global.Promise=Promise;
 	
 })(this);
